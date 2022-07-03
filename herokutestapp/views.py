@@ -1,4 +1,6 @@
+from django.contrib import auth
 from django.contrib.auth.models import User
+from django.core.mail import message
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -18,6 +20,17 @@ def registerd(request):
     username = request.POST['user']
     email = request.POST['email']
     password = request.POST['password']
-    user = User.objects.create_user(username,email,password)
-    user.save()
-    return HttpResponse("user saved")
+
+    # user = auth.authenticate(username=username,password=password)
+    # if user is not None:
+    #     message.info(request,'logged in')
+    #     return render(request,'index.html')
+    # else:
+    #     return HttpResponse("please try again")
+    if User.objects.filter(username=username).exists():
+        return HttpResponse("the username is already taken")
+    else:
+
+        user = User.objects.create_user(username,email,password)
+        user.save()
+        return HttpResponse("user registerd")
