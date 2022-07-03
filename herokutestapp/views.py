@@ -21,16 +21,16 @@ def registerd(request):
     email = request.POST['email']
     password = request.POST['password']
 
-    # user = auth.authenticate(username=username,password=password)
-    # if user is not None:
-    #     message.info(request,'logged in')
-    #     return render(request,'index.html')
-    # else:
-    #     return HttpResponse("please try again")
-    if User.objects.filter(username=username).exists():
-        return HttpResponse("the username is already taken")
+    user = auth.authenticate(username=username,password=password)
+    if user is not None:
+        message.info(request,'logged in')
+        return render(request,'index.html')
     else:
-
-        user = User.objects.create_user(username,email,password)
-        user.save()
-        return HttpResponse("user registerd")
+        return HttpResponse("please try again")
+    # if User.objects.filter(username=username).exists():
+    #     return HttpResponse("the username is already taken")
+    # else:
+    #
+    #     user = User.objects.create_user(username,email,password)
+    #     user.save()
+    #     return HttpResponse("user registerd")
