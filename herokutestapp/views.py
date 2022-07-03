@@ -23,7 +23,7 @@ def registerd(request):
 
     user = auth.authenticate(username=username,password=password)
     if user is not None:
-        message.info(request,'logged in')
+
         return render(request,'index.html')
     else:
         return HttpResponse("please try again")
