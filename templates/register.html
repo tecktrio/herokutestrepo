@@ -9,9 +9,13 @@
 <form  action="registerd" method="POST">
     {% csrf_token %}
     <div align="center" id="register_div">
-        <div>
-            <label>user name</label>
+         <div>
+            <label>firstname</label>
             <input type="text" name="user" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
+        </div>
+         <div>
+            <label>lastname</label>
+            <input type="text" name="lasrname" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
         </div>
         <div>
             <label>email id</label>
@@ -19,7 +23,19 @@
         </div>
         <div>
             <label>password</label>
-            <input type="text" name="password" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
+            <input type="password" name="password" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
+        </div>
+         <div>
+            <label>Address 1</label>
+            <input type="text" name="Address_1" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
+        </div>
+         <div>
+            <label>Address 2 </label>
+            <input type="text" name="Address_2" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
+        </div>
+         <div>
+            <label>Address 3</label>
+            <input type="text" name="Address_3" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">
         </div>
         <div>
             <input type="submit" name="submit" style="border-radius: 20px;border-color: white;background-color: rgb(5,5,20);color:white;padding:10px;margin:20px;">

@@ -34,3 +34,11 @@ def registerd(request):
     #     user = User.objects.create_user(username,email,password)
     #     user.save()
     #     return HttpResponse("user registerd")
+
+
+def login(request):
+    return render(request,'login.html')
+
+
+def logedin(request):
+    return render(request,'index.html')
